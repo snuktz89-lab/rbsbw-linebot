@@ -88,6 +88,7 @@ def handle_message(event):
     text = event.message.text
     user_id = event.source.user_id
     group_id = event.source.group_id
+    print(f"GROUP ID: {group_id}", flush=True)
 
     category, keyword = detect_problem(text)
     if not category:
