@@ -124,7 +124,9 @@ def handle_message(event):
         # แจ้งกลุ่มช่าง/เซฟตี้
         if TECHNICIAN_GROUP_ID:
             import datetime
-            now = datetime.datetime.now().strftime("%d/%m/%Y %H:%M")
+            import pytz
+            tz = pytz.timezone("Asia/Bangkok")
+            now = datetime.datetime.now(tz).strftime("%d/%m/%Y %H:%M")
             tech_text = (
                 f"🚨 แจ้งซ่อม!\n"
                 f"{emoji} ประเภท: {category}\n"
