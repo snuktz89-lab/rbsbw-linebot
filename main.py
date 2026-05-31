@@ -81,8 +81,8 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
-    # รับเฉพาะข้อความจากกลุ่มเท่านั้น
-    if event.source.type != "group":
+    # ตอบเฉพาะกลุ่มหลักเท่านั้น
+    if event.source.group_id == TECHNICIAN_GROUP_ID:
         return
 
     text = event.message.text
